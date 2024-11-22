@@ -1,9 +1,11 @@
 var form = document.querySelector('form');
 
+console.log(form)
+
 form.addEventListener('submit', (event)=>{
     event.preventDefault();
 
-    const formData = new FormData(this);
+    var formData = new FormData(form);
 
     fetch('salvar.php', {
         method: 'POST',
@@ -13,7 +15,7 @@ form.addEventListener('submit', (event)=>{
     .then(response => response.text())
     .then(data=> {
         alert(data);
-        this.reset();
+        form.reset();
         carregarUsuarios();
     })
 
@@ -22,12 +24,12 @@ form.addEventListener('submit', (event)=>{
 
 function carregarUsuarios(){
     fetch('consultar.php')
-    .then(response => response.text()) 
+    .then(response => response.text())
     .then(data => {
         document.querySelector('#listaUsuarios').innerHTML = data;
     })
 
-    .catch(error => console.error('Erro:', error))
+    .catch(error => console.error('Erro:', error));
 }
 
 window.onload = carregarUsuarios;

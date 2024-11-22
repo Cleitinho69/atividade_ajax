@@ -12,27 +12,27 @@
 </head>
 <body>
     <h2>Cadastro de Usuario</h2>
-    <form action="">
+    <form>
         <div>
             <label for="">Nome:</label>
-            <input type="text">
+            <input type="text" name="nome">
         </div>
 
         <div>
             <label for="">Idade:</label>
-            <input type="number" name="" id="">
+            <input type="number" name="idade" id="">
         </div>
 
         <div>
             <label for="">E-mail:</label>
-            <input type="email" name="" id="">
+            <input type="email" name="email" id="email">
         </div>
 
         <button type="submit">Cadastrar</button>
     </form>
 
     <h2>Lista de Usuarios Cadastrados</h2>
-    <section id="listaUsuario"></section>
+    <section id="listaUsuarios"></section>
 
     <script src="script.js"></script>
 </body>

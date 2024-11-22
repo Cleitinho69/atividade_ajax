@@ -15,7 +15,7 @@ $nome = $_POST['nome'];
 $idade = $_POST['idade'];
 $email = $_POST['email'];
 
-$sql = "INSET INTO tbpessoa (nome,idade,email) VALUES ('$nome', '$idade', '$email')";
+$sql = "INSERT INTO tbpessoa (nome, idade, email) VALUES ('$nome', $idade, '$email')";
 
 if($conn->query($sql) === TRUE){
     echo "Cadastro realizado com sucesso";
